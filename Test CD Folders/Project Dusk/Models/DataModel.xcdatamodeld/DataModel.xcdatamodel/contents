@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Folder" representedClassName=".Folder" syncable="YES">
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="notes" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="owner" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="notes" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Folder" positionX="-82.84375" positionY="1.42578125" width="128" height="90"/>
+        <element name="Note" positionX="171.77734375" positionY="16.46875" width="128" height="75"/>
+    </elements>
+</model>
